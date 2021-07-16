@@ -169,12 +169,8 @@
 					var apply = ( this.state == CKEDITOR.TRISTATE_OFF ) && ( !useComputedState || ( getAlignment( block, true ) != this.value ) );
 
 					if ( cssClassName && isAllowedCssClass ) {
-						// Append the desired class name.
-						if ( apply )
-							block.addClass( cssClassName );
-						else if ( !className )
-							block.removeAttribute( 'class' );
-					} else if ( apply && isAllowedTextAlign ) {
+						block.addClass( cssClassName );
+					} else if ( isAllowedTextAlign ) {
 						block.setStyle( 'text-align', this.value );
 					}
 				}
